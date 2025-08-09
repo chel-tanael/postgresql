@@ -28,3 +28,27 @@ WHERE column_name1 = 'value1';
 -- Add a column to the table
 ALTER TABLE product
 ADD COLUMN column_name3 VARCHAR(3);
+
+-- Inner Join (Does not include rows from both tables if without a match)
+SELECT column_name1, column_name2, column_name3
+FROM table_name1
+INNER JOIN table_name2
+ON table_name1.column_name3 = table_name2.column_name1
+
+-- Left Outer Join (Always includes all rows in table_name1 regardless if there's a match or none)
+SELECT column_name1, column_name2, column_name3
+FROM table_name1
+LEFT OUTER JOIN table_name2
+ON table_name1.column_name3 = table_name2.column_name1
+
+-- Right Outer Join (Always includes all rows in table_name2 regardless if there's a match or none)
+SELECT column_name1, column_name2, column_name3
+FROM table_name1
+RIGHT OUTER JOIN table_name2
+ON table_name1.column_name3 = table_name2.column_name1
+
+-- Full Outer Join (Always includes all rows in table_name1 and table_name2 regardless if there's a match or none)
+SELECT column_name1, column_name2, column_name3
+FROM table_name1
+FULL OUTER JOIN table_name2
+ON table_name1.column_name3 = table_name2.column_name1
